@@ -1,0 +1,33 @@
+### Ürün Oluştur
+POST http://localhost:8080/products
+Content-Type: application/json
+
+{
+    "name": "Test Ürün",
+    "price": 100.00,
+    "category_id": "1"
+}
+
+### Sipariş Oluştur
+POST http://localhost:8080/orders
+Content-Type: application/json
+
+{
+    "customer_id": "1",
+    "items": [
+        {
+            "product_id": "1",
+            "quantity": 2,
+            "price": 100.00
+        }
+    ]
+}
+
+### Ödeme İşle
+POST http://localhost:8080/payments
+Content-Type: application/json
+
+{
+    "order_id": "1",
+    "amount": 200.00
+} 
